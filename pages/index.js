@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import VideoList from '../components/videoList'
 import logo from '../public/assets/logo.png'
 
-export default function Home({ video }) {
+export default function Home({ videos }) {
   return (
     <div>
       <Head>
@@ -29,7 +30,7 @@ export default function Home({ video }) {
             <a>
               <div className="border border-white rounded-full w-[30px] h-[30px]">
                 <Image
-                  src={video.user_portrait_small}
+                  src={videos[0].user_portrait_small}
                   width="30px"
                   height="30px"
                   alt="User portrait"
@@ -53,18 +54,7 @@ export default function Home({ video }) {
       </div>
 
       <main className="mb-10">
-        <div className="grid mb-10">
-          <div className="mb-10">
-            <h2 className="text-4xl leading-9 text-blackish mb-[22px]">{video.title}</h2>
-            {/* Some of the descriptions have HTML in them for formatting. This gets them to display properly. */}
-            <p dangerouslySetInnerHTML={{ __html: video.description }} />
-          </div>
-          <div>
-            <div className="flex justify-center  aspect-video bg-no-repeat bg-center bg-cover bg-video-placeholder bg-blend-overlay">
-              <div className="bg-playbtn aspect-square bg-no-repeat bg-center" />
-            </div>
-          </div>
-        </div>
+        <VideoList videos={videos} />
         <div className="text-center">
           <h2 className="text-4xl leading-9 text-blackish mb-[22px]">Ready to have your cake and eat it too?</h2>
           <p className="text-[22px] leading-7 text-blackish">
@@ -151,12 +141,9 @@ export async function getServerSideProps(context) {
   let res = await fetch('https://vimeo.com/api/v2/channel/staffpicks/videos.json')
   let videos = await res.json()
 
-  let index = Math.floor(Math.random() * videos.length)
-  let video = videos[index]
-
   return {
     props: {
-      video,
+      videos,
     },
   }
 }
