@@ -13,50 +13,50 @@ export default function Home({ videos }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <nav className="flex justify-between items-center py-4 -mb-[86.5px] mx-4">
-        <Link href="/">
-          <a>
-            <Image src={logo} alt="Fake Site logo" />
-          </a>
-        </Link>
-        <div className="flex gap-8">
-          <Link href="#">
-            <a className="text-white hover:text-blackish active:text-blueish">Account</a>
-          </Link>
-          <Link href="#">
-            <a className="text-white hover:text-blackish active:text-blueish">Help</a>
-          </Link>
-          <Link href="#">
+      {/* Hero */}
+      <div className="mb-10 bg-hero-image bg-cover bg-center bg-no-repeat aspect-[21/9]">
+        <nav className="flex justify-between items-center py-4 mx-4 md:mx-8 lg:mx-16">
+          <Link href="/">
             <a>
-              <div className="border border-white rounded-full w-[30px] h-[30px]">
-                <Image
-                  src={videos[0].user_portrait_small}
-                  width="30px"
-                  height="30px"
-                  alt="User portrait"
-                  className="rounded-full"
-                />
-              </div>
+              <Image src={logo} alt="Fake Site logo" />
             </a>
           </Link>
-        </div>
-      </nav>
+          <div className="flex gap-4 md:gap-8">
+            <Link href="#">
+              <a className="text-white hover:text-blackish active:text-blueish">Account</a>
+            </Link>
+            <Link href="#">
+              <a className="text-white hover:text-blackish active:text-blueish">Help</a>
+            </Link>
+            <Link href="#">
+              <a>
+                <div className="border border-white rounded-full w-[30px] h-[30px]">
+                  <Image
+                    src={videos[0].user_portrait_small}
+                    width="30px"
+                    height="30px"
+                    alt="User portrait"
+                    className="rounded-full"
+                  />
+                </div>
+              </a>
+            </Link>
+          </div>
+        </nav>
 
-      {/* Hero */}
-      <div className="pt-[86.5px] mb-10 bg-hero-image bg-cover bg-center bg-no-repeat aspect-[21/9]">
-        <div className="mx-4 flex flex-col items-center justify-center h-full">
-          <h1 className="text-5xl text-white mb-[22px]">The world&apos;s greatest fake site</h1>
-          <p className="text-[22px] leading-7 text-white mb-[22px]">
+        <div className="mx-4 md:mx-8 lg:mx-16 pb-4 flex flex-col items-center justify-center text-center">
+          <h1 className="text-4xl md:text-5xl text-white mb-[22px]">The world&apos;s greatest fake site</h1>
+          <p className="text-xl leading-7 md:text-[22px] text-white mb-[22px]">
             Create the world&apos;s greatest fake site and enjoy the breeze of fresh air when you complete it
           </p>
-          <button className="min-h-[55px] text-white text-[22px] bg-redish px-4 rounded-full">
+          <button className="min-h-[55px] text-white text-xl md:text-[22px] bg-redish px-4 rounded-full">
             Do something awesome
           </button>
         </div>
       </div>
 
       <main className="mb-10">
-        <div className="mx-4">
+        <div className="mx-4 md:mx-8 lg:mx-16">
           <VideoList videos={videos} />
           <div className="text-center">
             <h2 className="text-4xl leading-9 text-blackish mb-[22px]">Ready to have your cake and eat it too?</h2>
@@ -68,7 +68,7 @@ export default function Home({ videos }) {
         </div>
       </main>
 
-      <footer className="mx-4">
+      <footer className="mx-4 md:mx-8 lg:mx-16">
         <div className="grid mb-10 text-center space-y-10">
           <div>
             <h3 className="font-bold text-redish">Fakesite</h3>
