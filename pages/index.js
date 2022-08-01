@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import logo from '../public/assets/logo.png'
 
-export default function Home() {
+export default function Home({ video }) {
   return (
     <div>
       <Head>
@@ -26,7 +26,17 @@ export default function Home() {
             <a>Help</a>
           </Link>
           <Link href="#">
-            <a>Account Logo</a>
+            <a>
+              <div className="border border-white rounded-full w-[30px] h-[30px]">
+                <Image
+                  src={video.user_portrait_small}
+                  width="30px"
+                  height="30px"
+                  alt="User portrait"
+                  className="rounded-full"
+                />
+              </div>
+            </a>
           </Link>
         </div>
       </nav>
@@ -45,8 +55,9 @@ export default function Home() {
       <main className="mb-10">
         <div className="grid mb-10">
           <div className="mb-10">
-            <h2 className="text-4xl leading-9 text-blackish mb-[22px]">Video Title</h2>
-            <p>Video description</p>
+            <h2 className="text-4xl leading-9 text-blackish mb-[22px]">{video.title}</h2>
+            {/* Some of the descriptions have HTML in them for formatting. This gets them to display properly. */}
+            <p dangerouslySetInnerHTML={{ __html: video.description }} />
           </div>
           <div>
             <div className="flex justify-center  aspect-video bg-no-repeat bg-center bg-cover bg-video-placeholder bg-blend-overlay">
@@ -134,4 +145,18 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+export async function getServerSideProps(context) {
+  let res = await fetch('https://vimeo.com/api/v2/channel/staffpicks/videos.json')
+  let videos = await res.json()
+
+  let index = Math.floor(Math.random() * videos.length)
+  let video = videos[index]
+
+  return {
+    props: {
+      video,
+    },
+  }
 }
