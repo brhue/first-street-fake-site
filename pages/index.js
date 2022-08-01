@@ -13,7 +13,7 @@ export default function Home({ videos }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <nav className="flex justify-between items-center py-4 -mb-[86px]">
+      <nav className="flex justify-between items-center py-4 -mb-[86.5px]">
         <Link href="/">
           <a>
             <Image src={logo} alt="Fake Site logo" />
@@ -43,7 +43,7 @@ export default function Home({ videos }) {
       </nav>
 
       {/* Hero */}
-      <div className="pt-[86px] mb-10 bg-hero-image bg-cover bg-center bg-no-repeat aspect-[21/9] flex flex-col items-center justify-center">
+      <div className="pt-[86.5px] mb-10 bg-hero-image bg-cover bg-center bg-no-repeat aspect-[21/9] flex flex-col items-center justify-center">
         <h1 className="text-5xl text-white mb-[22px]">The world&apos;s greatest fake site</h1>
         <p className="text-[22px] leading-7 text-white mb-[22px]">
           Create the world&apos;s greatest fake site and enjoy the breeze of fresh air when you complete it
