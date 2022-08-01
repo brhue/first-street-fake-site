@@ -21,10 +21,10 @@ export default function Home({ videos }) {
         </Link>
         <div className="flex gap-8">
           <Link href="#">
-            <a>Account</a>
+            <a className="text-white hover:text-blackish active:text-blueish">Account</a>
           </Link>
           <Link href="#">
-            <a>Help</a>
+            <a className="text-white hover:text-blackish active:text-blueish">Help</a>
           </Link>
           <Link href="#">
             <a>
