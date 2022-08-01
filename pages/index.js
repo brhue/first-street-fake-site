@@ -14,7 +14,7 @@ export default function Home({ videos }) {
       </Head>
 
       {/* Hero */}
-      <div className="mb-10 bg-hero-image bg-cover bg-center bg-no-repeat aspect-[21/9]">
+      <div className="mb-10 bg-hero-image bg-cover bg-center bg-no-repeat aspect-[21/9] flex flex-col">
         <nav className="flex justify-between items-center py-4 mx-4 md:mx-8 lg:mx-16">
           <Link href="/">
             <a>
@@ -44,7 +44,7 @@ export default function Home({ videos }) {
           </div>
         </nav>
 
-        <div className="mx-4 md:mx-8 lg:mx-16 pb-4 flex flex-col items-center justify-center text-center">
+        <div className="mx-4 md:mx-8 lg:mx-16 pb-4 flex flex-col items-center justify-center text-center flex-grow">
           <h1 className="text-4xl md:text-5xl text-white mb-[22px]">The world&apos;s greatest fake site</h1>
           <p className="text-xl leading-7 md:text-[22px] text-white mb-[22px]">
             Create the world&apos;s greatest fake site and enjoy the breeze of fresh air when you complete it
@@ -59,8 +59,10 @@ export default function Home({ videos }) {
         <div className="mx-4 md:mx-8 lg:mx-16">
           <VideoList videos={videos} />
           <div className="text-center">
-            <h2 className="text-4xl leading-9 text-blackish mb-[22px]">Ready to have your cake and eat it too?</h2>
-            <p className="text-[22px] leading-7 text-blackish">
+            <h2 className="text-3xl md:text-4xl leading-9 text-blackish mb-[22px]">
+              Ready to have your cake and eat it too?
+            </h2>
+            <p className="text-xl md:text-[22px] leading-7 text-blackish">
               Start by designing the experience you have in mind. We&apos;ll guide you through each step. If your
               experience meets the quality standards, you&apos;ll hear more about what&apos;s next.
             </p>
@@ -69,7 +71,7 @@ export default function Home({ videos }) {
       </main>
 
       <footer className="mx-4 md:mx-8 lg:mx-16">
-        <div className="grid mb-10 text-center space-y-10">
+        <div className="mb-10 text-center space-y-10 flex flex-col sm:flex-row sm:gap-16 sm:space-y-0 sm:text-left md:gap-32">
           <div>
             <h3 className="font-bold text-redish">Fakesite</h3>
             <ul>
