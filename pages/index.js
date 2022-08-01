@@ -13,7 +13,7 @@ export default function Home({ videos }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <nav className="flex justify-between items-center py-4 -mb-[86.5px]">
+      <nav className="flex justify-between items-center py-4 -mb-[86.5px] mx-4">
         <Link href="/">
           <a>
             <Image src={logo} alt="Fake Site logo" />
@@ -43,28 +43,32 @@ export default function Home({ videos }) {
       </nav>
 
       {/* Hero */}
-      <div className="pt-[86.5px] mb-10 bg-hero-image bg-cover bg-center bg-no-repeat aspect-[21/9] flex flex-col items-center justify-center">
-        <h1 className="text-5xl text-white mb-[22px]">The world&apos;s greatest fake site</h1>
-        <p className="text-[22px] leading-7 text-white mb-[22px]">
-          Create the world&apos;s greatest fake site and enjoy the breeze of fresh air when you complete it
-        </p>
-        <button className="min-h-[55px] text-white text-[22px] bg-redish px-4 rounded-full">
-          Do something awesome
-        </button>
+      <div className="pt-[86.5px] mb-10 bg-hero-image bg-cover bg-center bg-no-repeat aspect-[21/9]">
+        <div className="mx-4 flex flex-col items-center justify-center h-full">
+          <h1 className="text-5xl text-white mb-[22px]">The world&apos;s greatest fake site</h1>
+          <p className="text-[22px] leading-7 text-white mb-[22px]">
+            Create the world&apos;s greatest fake site and enjoy the breeze of fresh air when you complete it
+          </p>
+          <button className="min-h-[55px] text-white text-[22px] bg-redish px-4 rounded-full">
+            Do something awesome
+          </button>
+        </div>
       </div>
 
       <main className="mb-10">
-        <VideoList videos={videos} />
-        <div className="text-center">
-          <h2 className="text-4xl leading-9 text-blackish mb-[22px]">Ready to have your cake and eat it too?</h2>
-          <p className="text-[22px] leading-7 text-blackish">
-            Start by designing the experience you have in mind. We&apos;ll guide you through each step. If your
-            experience meets the quality standards, you&apos;ll hear more about what&apos;s next.
-          </p>
+        <div className="mx-4">
+          <VideoList videos={videos} />
+          <div className="text-center">
+            <h2 className="text-4xl leading-9 text-blackish mb-[22px]">Ready to have your cake and eat it too?</h2>
+            <p className="text-[22px] leading-7 text-blackish">
+              Start by designing the experience you have in mind. We&apos;ll guide you through each step. If your
+              experience meets the quality standards, you&apos;ll hear more about what&apos;s next.
+            </p>
+          </div>
         </div>
       </main>
 
-      <footer>
+      <footer className="mx-4">
         <div className="grid mb-10 text-center space-y-10">
           <div>
             <h3 className="font-bold text-redish">Fakesite</h3>
@@ -117,8 +121,7 @@ export default function Home({ videos }) {
             </ul>
           </div>
         </div>
-        <hr />
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center border-t border-[#e8e8e8] py-2">
           <Image src={logo} alt="Fake Site logo" />
           <div className="flex gap-4">
             <Link href="#">
