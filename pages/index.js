@@ -49,7 +49,12 @@ export default function Home({ videos }) {
           <p className="text-xl leading-7 md:text-[22px] text-white mb-[22px]">
             Create the world&apos;s greatest fake site and enjoy the breeze of fresh air when you complete it
           </p>
-          <button className="min-h-[55px] text-white text-xl md:text-[22px] bg-redish px-4 rounded-full">
+          <button
+            className="min-h-[55px] text-white text-xl md:text-[22px] bg-redish px-4 rounded-full"
+            onClick={() => {
+              window.location = 'https://firststreet.org'
+            }}
+          >
             Do something awesome
           </button>
         </div>
